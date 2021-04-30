@@ -3,16 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpService } from './service/http.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedServiceModule } from './shared-service/shared-service.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    SharedServiceModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [HttpService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
